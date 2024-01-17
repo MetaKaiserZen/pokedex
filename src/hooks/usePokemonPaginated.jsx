@@ -6,6 +6,7 @@ const usePokemonPaginated = () =>
 {
     const [loading, setLoading] = useState(true);
     const [pokemon, setPokemon] = useState([]);
+    const [pokemonNull, setPokemonNull] = useState(false);
 
     const nextPageURL = useRef('https://pokeapi.co/api/v2/pokemon?limit=20');
 
@@ -21,19 +22,26 @@ const usePokemonPaginated = () =>
             return { id, name, picture }
         });
 
-        setPokemon([...pokemon, ...newPokemon]);
+        setPokemon([ ...pokemon, ...newPokemon ]);
         setLoading(false);
     }
 
     const listarPokemon = async () =>
     {
-        setLoading(true);
+        if (pokemonNull === false)
+        {
+            setLoading(true);
 
-        const { data } = await PokemonAPI.get(nextPageURL.current);
+            const { data } = await PokemonAPI.get(nextPageURL.current);
 
-        nextPageURL.current = data.next;
+            data.next === null ? setPokemonNull(true) : (nextPageURL.current = data.next);
 
-        mapPokemon(data.results);
+            mapPokemon(data.results);
+        }
+        else
+        {
+            setLoading(false);
+        }
     }
 
     useEffect(() =>

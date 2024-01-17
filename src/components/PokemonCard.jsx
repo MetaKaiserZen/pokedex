@@ -112,11 +112,11 @@ const styles = StyleSheet.create(
     },
     name:
     {
+        marginHorizontal: 10,
         color: 'white',
-        fontSize: 20,
+        fontSize: 15,
         fontWeight: 'bold',
-        top: 20,
-        left: 10
+        top: 20
     },
     pokeballContainer:
     {

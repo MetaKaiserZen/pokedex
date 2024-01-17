@@ -1,4 +1,4 @@
-import { StyleSheet, View, TouchableOpacity, Text, Image, ActivityIndicator } from 'react-native';
+import { StyleSheet, View, Platform, TouchableOpacity, Text, Image, ActivityIndicator } from 'react-native';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -20,7 +20,13 @@ const PokemonScreen = ({ navigation, route }) =>
     const { loading, pokemon } = usePokemon(id);
 
     return (
-        <View style={{ flex: 1 }}>
+        <View
+            style={
+            {
+                flex: 1,
+                marginBottom: (Platform.OS === 'ios') ? 75 : 50
+            }}
+        >
             <View
                 style={
                 {
@@ -97,7 +103,7 @@ const styles = StyleSheet.create(
     pokemon:
     {
         color: 'white',
-        fontSize: 40,
+        fontSize: 30,
         alignSelf: 'flex-start',
         left: 20
     },
