@@ -1,6 +1,11 @@
 import { useState } from 'react';
 
-import { ActivityIndicator, Animated, View } from 'react-native'; 
+import
+{
+    ActivityIndicator,
+    Animated,
+    View
+} from 'react-native'; 
 
 import useAnimation from '../hooks/useAnimation';
 
@@ -45,11 +50,7 @@ const FadeInImage = ({ uri, style = {} }) =>
                 source={{ uri }}
                 onError={onError}
                 onLoad={finishLoading}
-                style={
-                {
-                    ...style,
-                    opacity
-                }}
+                style={{ ...style, opacity }}
             />
         </View>
     );

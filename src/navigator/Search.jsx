@@ -9,14 +9,11 @@ export const Search = () =>
 {
     return (
         <Stack.Navigator
-            initialRouteName="TabsScreen"
+            initialRouteName="TabScreen"
             screenOptions={
             {
                 headerShown: false,
-                cardStyle:
-                {
-                    backgroundColor: 'white'
-                }
+                cardStyle: { backgroundColor: 'white' }
             }}
         >
             <Stack.Screen name="TabScreen" component={TabScreen} />

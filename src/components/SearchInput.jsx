@@ -1,8 +1,13 @@
 import { useEffect, useState } from 'react';
 
-import { StyleSheet, View, TextInput } from 'react-native';
+import
+{
+    View,
+    TextInput,
+    StyleSheet
+} from 'react-native';
 
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 
 import useDebounced from '../hooks/useDebounced';
 
@@ -18,13 +23,7 @@ const SearchInput = ({ onDebounce, style }) =>
     }, [debounced]);
 
     return (
-        <View
-            style={
-            {
-                ...styles.container,
-                ...style
-            }}
-        >
+        <View style={{ ...styles.container, ...style }}>
             <View style={styles.background}>
                 <TextInput
                     placeholder="Buscar Pokémon"
@@ -34,6 +33,7 @@ const SearchInput = ({ onDebounce, style }) =>
                     autoCorrect={false}
                     style={styles.input}
                 />
+
                 <Ionicons
                     name="search-outline"
                     color="gray"

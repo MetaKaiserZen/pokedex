@@ -1,6 +1,13 @@
 import { useState, useEffect } from 'react';
 
-import { Dimensions, View, Platform, FlatList, Text } from 'react-native';
+import
+{
+    Dimensions,
+    View,
+    Platform,
+    FlatList,
+    Text
+} from 'react-native';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -11,7 +18,6 @@ import PokemonCard from '../components/PokemonCard';
 import usePokemonSearch from '../hooks/usePokemonSearch';
 
 import styles from '../theme/Theme';
-
 
 const width = Dimensions.get('window').width;
 
@@ -60,7 +66,7 @@ const TabScreen = () =>
                     {
                         flex: 1,
                         marginHorizontal: 17.5,
-                        marginBottom: (Platform.OS === 'ios') ? 75 : 50
+                        marginBottom: (Platform.OS === 'ios') ? 100 : 75
                     }}
                 >
                     <SearchInput
@@ -73,6 +79,7 @@ const TabScreen = () =>
                             top: (Platform.OS === 'ios') ? top : top + 25
                         }}
                     />
+
                     <FlatList
                         data={filter}
                         keyExtractor={(pokemon) => pokemon.id}

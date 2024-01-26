@@ -1,6 +1,19 @@
-import { useState, useEffect, useRef } from 'react';
+import
+{
+    useState,
+    useEffect,
+    useRef
+} from 'react';
 
-import { Dimensions, StyleSheet, TouchableOpacity, View, Text, Image } from 'react-native';
+import
+{
+    Dimensions,
+    TouchableOpacity,
+    View,
+    Text,
+    Image,
+    StyleSheet
+} from 'react-native';
 
 import { useNavigation } from '@react-navigation/native';
 
@@ -74,18 +87,12 @@ const PokemonCard = ({ pokemon }) =>
                         {`\n#${pokemon.id}`}
                     </Text>
                 </View>
-                <View
-                    style={styles.pokeballContainer}
-                >
-                    <Image
-                        source={require('../../assets/pokeball-white.png')}
-                        style={styles.pokeball}
-                    />
+
+                <View style={styles.pokeballContainer}>
+                    <Image source={require('../../assets/pokeball-white.png')} style={styles.pokeball} />
                 </View>
-                <FadeInImage
-                    uri={pokemon.picture}
-                    style={{ ...styles.pokemon }}
-                />
+
+                <FadeInImage uri={pokemon.picture} style={{ ...styles.pokemon }} />
             </View>
         </TouchableOpacity>
     );

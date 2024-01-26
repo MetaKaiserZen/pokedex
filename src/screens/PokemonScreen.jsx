@@ -1,8 +1,17 @@
-import { StyleSheet, View, Platform, TouchableOpacity, Text, Image, ActivityIndicator } from 'react-native';
+import
+{
+    View,
+    Platform,
+    TouchableOpacity,
+    Text,
+    Image,
+    ActivityIndicator,
+    StyleSheet
+} from 'react-native';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 
 import FadeInImage from '../components/FadeInImage';
 import PokemonDetail from '../components/PokemonDetail';
@@ -20,28 +29,12 @@ const PokemonScreen = ({ navigation, route }) =>
     const { loading, pokemon } = usePokemon(id);
 
     return (
-        <View
-            style={
-            {
-                flex: 1,
-                marginBottom: (Platform.OS === 'ios') ? 75 : 50
-            }}
-        >
-            <View
-                style={
-                {
-                    ...styles.container,
-                    backgroundColor: color
-                }}
-            >
+        <View style={{ flex: 1, marginBottom: (Platform.OS === 'ios') ? 100 : 75 }}>
+            <View style={{ ...styles.container, backgroundColor: color }}>
                 <TouchableOpacity
                     activeOpacity={0.75}
                     onPress={() => navigation.pop()}
-                    style={
-                    {
-                        ...styles.button,
-                        top: top + 10
-                    }}
+                    style={{ ...styles.button, top: top + 10 }}
                 >
                     <Ionicons
                         name="arrow-back-outline"
@@ -49,34 +42,22 @@ const PokemonScreen = ({ navigation, route }) =>
                         size={35}
                     />
                 </TouchableOpacity>
-                <Text
-                    style={
-                    {
-                        ...styles.pokemon,
-                        top: top + 40
-                    }}
-                >
+
+                <Text style={{ ...styles.pokemon, top: top + 40 }}>
                     {name}
                     {`\n#${id}`}
                 </Text>
-                <Image
-                    source={require('../../assets/pokeball-white.png')}
-                    style={styles.pokeball}
-                />
-                <FadeInImage
-                    uri={picture}
-                    style={styles.image}
-                />
+
+                <Image source={require('../../assets/pokeball-white.png')} style={styles.pokeball} />
+
+                <FadeInImage uri={picture} style={styles.image} />
             </View>
 
             {
                 loading ?
                 (
                     <View style={styles.loading}>
-                        <ActivityIndicator
-                            color={color}
-                            size={50}
-                        />
+                        <ActivityIndicator color={color} size={50} />
                     </View>
                 ) : <PokemonDetail pokemon={pokemon} />
             }
@@ -103,7 +84,7 @@ const styles = StyleSheet.create(
     pokemon:
     {
         color: 'white',
-        fontSize: 30,
+        fontSize: 40,
         alignSelf: 'flex-start',
         left: 20
     },

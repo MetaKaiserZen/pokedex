@@ -2,7 +2,7 @@ import { Platform } from 'react-native';
 
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 
-import Ionicons from '@expo/vector-icons/Ionicons';
+import { Ionicons } from '@expo/vector-icons';
 
 import { Navigator } from './Navigator';
 import { Search } from './Search';
@@ -25,7 +25,7 @@ export const Tabs = () =>
                     opacity: 0.9,
                     borderWidth: 0,
                     elevation: 0,
-                    height: (Platform.OS === 'ios') ? 75 : 50
+                    height: (Platform.OS === 'ios') ? 100 : 75
                 }
             }}
             sceneContainerStyle={{ backgroundColor: 'white' }}
@@ -41,11 +41,12 @@ export const Tabs = () =>
                         <Ionicons
                             name="list-outline"
                             color={color}
-                            size={25}
+                            size={40}
                         />
                     )
                 }}
             />
+
             <Tab.Screen
                 name="SearchScreen"
                 component={Search}
@@ -57,7 +58,7 @@ export const Tabs = () =>
                         <Ionicons
                             name="search-outline"
                             color={color}
-                            size={25}
+                            size={40}
                         />
                     )
                 }}

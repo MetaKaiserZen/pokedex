@@ -1,4 +1,12 @@
-import { Image, View, Platform, FlatList, Text, ActivityIndicator } from 'react-native';
+import
+{
+    Image,
+    View,
+    Platform,
+    FlatList,
+    Text,
+    ActivityIndicator
+} from 'react-native';
 
 import { useSafeAreaInsets } from 'react-native-safe-area-context';
 
@@ -16,17 +24,9 @@ const HomeScreen = () =>
 
     return (
         <>
-            <Image
-                source={require('../../assets/pokeball.png')}
-                style={styles.pokeball}
-            />
-            <View
-                style={
-                {
-                    alignItems: 'center',
-                    marginBottom: (Platform.OS === 'ios') ? 75 : 50
-                }}
-            >
+            <Image source={require('../../assets/pokeball.png')} style={styles.pokeball} />
+
+            <View style={{ alignItems: 'center', marginBottom: (Platform.OS === 'ios') ? 75 : 50 }}>
                 <FlatList
                     data={pokemon}
                     keyExtractor={(pokemon) => pokemon.id}
@@ -45,7 +45,7 @@ const HomeScreen = () =>
                                     paddingBottom: 10
                                 }}
                             >
-                                Pokédex
+                                {'Pokédex'}
                             </Text>
                     )}
                     renderItem={({ item: pokemon }) => (<PokemonCard pokemon={pokemon} />)}

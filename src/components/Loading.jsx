@@ -1,4 +1,10 @@
-import { StyleSheet, View, ActivityIndicator, Text } from 'react-native';
+import
+{
+    View,
+    ActivityIndicator,
+    Text,
+    StyleSheet
+} from 'react-native';
 
 const Loading = () =>
 {
@@ -6,11 +12,9 @@ const Loading = () =>
         <View
             style={styles.container}
         >
-            <ActivityIndicator
-                size={50}
-                color="gray"
-            />
-            <Text>Cargando...</Text>
+            <ActivityIndicator size={50} color="gray" />
+
+            <Text>{'Cargando...'}</Text>
         </View>
     );
 }

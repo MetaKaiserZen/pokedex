@@ -1,4 +1,9 @@
-import { useState, useEffect, useRef } from 'react';
+import
+{
+    useState,
+    useEffect,
+    useRef
+} from 'react';
 
 import { PokemonAPI } from '../api/PokemonAPI';
 
